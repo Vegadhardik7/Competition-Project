@@ -58,9 +58,9 @@ def predict():
     class_names = ['non-suicide','suicide']
 
     if model.predict([embedded_docs_msg]) > 0.5:
-        my_pred = class_name[0]
+        my_pred = class_names[0]
     else:
-        my_pred = class_name[1]
+        my_pred = class_names[1]
       
     return render_template('Article.html', data=my_pred)
 
