@@ -35,11 +35,9 @@ def predict():
 
         return data
 
-    texts = [' '.join(clean_text(text)) for text in message]
-
     corpus = []
-    for i in range(0, len(texts)):
-        data = re.sub('[^a-zA-Z]', ' ', texts[i])
+    for i in range(0, len(message)):
+        data = re.sub('[^a-zA-Z]', ' ', message[i])
         data = data.lower()
         data = data.split()
 
@@ -48,7 +46,7 @@ def predict():
         corpus.append(data)
 
     voc_size = 10000
-    onehot_repr_short = [one_hot(words, voc_size) for words in texts]
+    onehot_repr_short = [one_hot(words, voc_size) for words in corpus]
 
     sent_len = 5850
     embedded_docs_msg = pad_sequences(onehot_repr_short, padding='pre', maxlen=sent_len)
