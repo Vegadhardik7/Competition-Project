@@ -57,7 +57,7 @@ def predict():
 
     class_names = ['non-suicide','suicide']
 
-    if model.predict([embedded_docs]) > 0.5:
+    if model.predict(embedded_docs) > 0.5:
         my_pred = class_name[0]
     else:
         my_pred = class_name[1]
