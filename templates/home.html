@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    <link rel="stylesheet" href="styles.css">-->
+    <title>TWITTER SENTIMENT ANALYSIS</title>
+</head>
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+
+}
+
+body{
+    background: url("px.jpg") no-repeat top center;
+    padding: 0 10px;
+    background-size: cover;
+}
+
+.wrapper{
+
+    max-width: 500px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 1.25);
+
+}
+
+
+.wrapper .title{
+
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fec107;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+
+.wrapper .form{
+
+    width: 100%;
+
+}
+
+.wrapper .form .input_field{
+
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.wrapper .form .ni_input_field label{
+
+    width:80px;
+    font: bold;
+    color: wheat;
+    margin-right: 10px;
+    font-size: 14px;
+
+}
+
+
+.wrapper .form .ni_input_field input{
+
+    width: 250px;
+
+}
+
+
+.wrapper .form .input_field label{
+
+    
+    width:80px;
+    font: bold;
+    color: wheat;
+    margin-right: 50px;
+    font-size: 14px;
+
+}
+
+
+.wrapper .form .input_field input{
+
+    width: 100px;
+    height: 30px;
+
+}
+
+
+
+.wrapper .form .input_field .textarea{
+	
+    text-align: top;
+    margin_top: 15px;
+    height: 100px;
+    width: 500px;
+
+}
+
+</style>
+
+
+<body>
+<form action="{{ url_for('predict')}}" method="post" id="myform">
+    <div class="wrapper">
+        <div class="title">
+            <h1 style="color: white;">To access our Article Tell us your opinion</h1>
+        </div>
+        <div class="form">    
+	    <div class="ni_input_field">	
+	    	<label style="color: white;">First Name : </label><input id='fname' type="text" name='fname'>
+            	<br/><br/>
+	    </div>
+            <div class="ni_input_field">  	
+	    	<label style="color: white;">Last Name : </label><input id='lname' type="text" name='lname'>
+            	<br/><br/>
+            </div>
+	    <div class="ni_input_field">  	
+	    	<label style="color: white;">Your Email : </label><input type="email" id='email' name='email'>
+            	<br/><br/>
+            </div>	
+
+        <div class="input_field">
+                <textarea maxlength="500" minlength="10" wrap="physical" id="message" name="message" class="textarea" placeholder="So How Are You Feeling Today Under 500 Characters"></textarea>
+        </div>
+
+            <div class="input_field">
+		    <a href="Article.html">
+                <input type="submit" style="color:black; background: skyblue;" id="submit" name='submit' value="SUBMIT" disabled="disabled">
+            </a>
+	     </div>
+
+
+            <div>
+                <center>
+                    <h2 style="color: white; margin-bottom:10px;">
+                        {{prediction_text}}
+                    </h2>
+                </center>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<script>
+
+    myform.addEventListener('input', () => {
+        if (message.value.length > 10){
+            submit.removeAttribute('disabled');
+        }else{
+            submit.removeAttribute('disabled','disabled');
+        }
+    });
+
+</script>
+</body>
+</html>

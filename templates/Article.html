@@ -1,0 +1,75 @@
+<html>
+
+
+<style>
+
+.wrapper .text{
+margin-right: 80px;
+margin-left: 80px;
+}
+
+</style>
+
+
+
+<body>
+<center>
+<form action="{{ url_for('predict')}}" method="post">
+<div class="wrapper">
+
+	<div class="title">
+		<p style="font-size:60px">Impact Of Corona Virus In Our Life</p>
+	</div>
+	
+	<div class="text">
+		<p style="font-size:20px">
+			We all have been so busy living the ‘life,’ many of us have lost those real, genuine moments we have with our loved ones. It could have been the busy schedules, running around to make ends meet, & rushing to be in urgent meetings.
+
+			Sure, maybe you were lucky enough to go for family vacations every now & then. But even then, didn’t you dread those pending files waiting at your workstation?
+
+			Now, the COVID-19 situation has positively impacted the way you emote and maintain relationships. You get to spend your time with your family and plan your work better. This actually helps you build a better future for both your work and family.
+
+			As life slowed down, we have found ways to stay connected with people, even if it’s virtually. Reconnect with your loved ones and retrospect.
+
+			Being hygienic is no longer just a good habit, but the very skill you need for survival.
+
+			Running businesses remotely is no longer something that we think is impossible & can also bring about this massive wave of change in Real estate, especially in the tier 1 cities. With businesses realizing they no longer need a fancy, large physical space in the city center to run their business as smoothly as ever, the demand for ‘hot’ places is going to come down.
+
+			The ones who do need physical spaces are going to stick with smaller spaces and it wouldn’t matter where they reside. Distances are no longer a challenge; companies get to hire talents beyond zip codes as long as there are enough resources.
+
+			When the need for physical buildings drops, naturally, the demand for it does as well, which dips the prices. Thus, it becomes affordable to all.
+
+		</p>
+	</div>
+
+
+
+{% if data == 'non-suicide' %}
+<img src='static\S1.png' width="50%">
+
+{% else %}
+<img src='static\S2.jpg' width="50%">
+
+{%endif%}
+
+
+	<div class="text">
+		<p style="font-size:20px">
+			This quarantine welcomes ideas, hacks, tips, & tricks to beat the lockdowns & help our communities. Companies across the world have started thinking about coming up with product & service ranges that enable you to be as connected as you are with your teams and also your loved ones. Finding creative ways to not let the boredom of four walls get you is the newest trend and rightfully so!
+
+			This has opened a new way of thought. Organizations cannot just stop functioning altogether, and each is coming up with the ultimate ideas to attract & sustain both their customers & employees.
+
+			This may as well lead to breakthroughs & innovations. You see, innovation happens for nothing, but when the environment demands it! And let’s wait for the coolest ideas that can take the world by a storm.
+
+			By coolest ideas.. we mean to act right. The wise thing to do now is to remain calm and healthy while looking after each other. One way to further prevent the spread is to conduct surveys and collect valuable information from people.
+		</p>
+	</div>
+
+
+</div>
+</center>
+
+
+</form>
+</body>
+</html>
