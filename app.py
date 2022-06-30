@@ -28,13 +28,6 @@ def predict():
 
     message = [message]
 
-    def clean_text(data):
-        data = re.sub(r'http\S+', '', data)
-        data = re.sub('[^a-zA-Z]', ' ', data)
-        data = data.lower()
-
-        return data
-
     corpus = []
     for i in range(0, len(message)):
         data = re.sub('[^a-zA-Z]', ' ', message[i])
