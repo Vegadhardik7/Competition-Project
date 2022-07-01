@@ -11,7 +11,7 @@ https://sucidialdetection.herokuapp.com/
 Sentiment Analysis
 
 # Domain Targeted:
-Marketing & Ads
+Ads, Social Welfare
 
 # Technologies Used:
 - Python
